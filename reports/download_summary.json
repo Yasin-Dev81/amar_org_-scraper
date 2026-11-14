@@ -1,0 +1,26 @@
+{
+  "total_listing_pages_visited": 1,
+  "total_records_discovered": 1,
+  "records_without_attachments": 0,
+  "unclassified_records": 0,
+  "total_files_identified": 2,
+  "successfully_downloaded_files": 2,
+  "failed_downloads": 0,
+  "unavailable_files": 0,
+  "duplicate_files": 0,
+  "total_downloaded_size_bytes": 1136211,
+  "total_downloaded_size_mb": 1.08,
+  "files_by_format": {
+    "PDF": 1,
+    "XLSX": 1
+  },
+  "files_by_subject": {
+    "culture_tourism": 2
+  },
+  "files_by_resource_type": {
+    "reports": 2
+  },
+  "records_by_year": {
+    "1404": 1
+  }
+}

@@ -1,0 +1,78 @@
+# Configuration for Iran Statistical Center (amar.org.ir) Scraper
+
+website:
+  base_url: "https://www.amar.org.ir"
+  start_urls:
+    - "https://www.amar.org.ir/statistical-information/currentpage/3"
+    - "https://www.amar.org.ir/statistical-information"
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+  categories:
+    population_social: "https://www.amar.org.ir/statistical-information?catid=3503"
+    economy: "https://www.amar.org.ir/statistical-information?catid=3505"
+    intersectoral_environment: "https://www.amar.org.ir/statistical-information?catid=3506"
+    census: "https://www.amar.org.ir/statistical-information/catid/3005"
+  include_external_domains: false
+  allowed_external_domains:
+    - "amar.org.ir"
+    - "www.amar.org.ir"
+    - "sci.org.ir"
+    - "rpt.sci.org.ir"
+    - "ssis.sci.org.ir"
+
+scraping:
+  max_concurrent_requests: 4
+  request_delay: 0.5  # seconds between requests to be respectful
+  connection_timeout: 30.0  # seconds
+  retry_count: 3
+  retry_backoff_factor: 2.0
+  max_pages_to_crawl: null  # null means crawl all discoverable pages
+  max_records_to_process: null  # null means all
+  browser_automation: false  # fallback if needed
+
+download:
+  max_concurrent_downloads: 3
+  download_delay: 0.3
+  max_file_size_bytes: 524288000  # 500 MB
+  verify_ssl: false  # Iranian public sector portals use national root CA certificates
+  chunk_size_bytes: 65536  # 64 KB
+
+  resume_interrupted: true
+  temp_extension: ".part"
+  supported_extensions:
+    - ".xls"
+    - ".xlsx"
+    - ".xlsm"
+    - ".csv"
+    - ".tsv"
+    - ".txt"
+    - ".pdf"
+    - ".doc"
+    - ".docx"
+    - ".ppt"
+    - ".pptx"
+    - ".zip"
+    - ".rar"
+    - ".7z"
+    - ".sav"
+    - ".dta"
+    - ".sas7bdat"
+    - ".shp"
+    - ".kml"
+    - ".kmz"
+    - ".geojson"
+    - ".xml"
+    - ".json"
+
+storage:
+  base_dir: "."
+  data_dir: "data"
+  metadata_dir: "metadata"
+  database_dir: "database"
+  database_name: "scraper_state.sqlite"
+  logs_dir: "logs"
+  reports_dir: "reports"
+
+classification:
+  fallback_category: "other"
+  strict_mode: false
+  confidence_threshold: 0.6

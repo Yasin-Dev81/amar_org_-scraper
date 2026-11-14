@@ -1,0 +1,6 @@
+# uv configuration for 32-bit Debian 12 target
+# No prebuilt managed Python binaries exist for i686 Linux
+python-downloads = "manual"
+
+# Limit build concurrency to avoid OOM on 2GB RAM systems
+concurrent-builds = 1
